@@ -1,0 +1,19 @@
+{
+  "name": "iwa-ca2",
+  "version": "1.0.0",
+  "description": "CA2 for Interactive Web",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/landonhyj/IWA-CA2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/landonhyj/IWA-CA2/issues"
+  },
+  "homepage": "https://github.com/landonhyj/IWA-CA2#readme"
+}
