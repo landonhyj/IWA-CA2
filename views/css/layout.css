@@ -1,0 +1,17 @@
+.bg-white {
+    background-color:#ffffff !important;
+    padding: 100px;
+    
+}
+
+.footer {
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background-color: #f18973;
+    color: red;
+}
