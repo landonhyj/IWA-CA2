@@ -10,9 +10,9 @@ var app = express();
 var port = process.env.port || 3000;
 
 app.set('views', path.join(__dirname, '/views'));
-app.engine('hbs', exphbs({extname: 'hbs', 
+app.engine('hbs', exphbs({ extname: 'hbs', 
                 defaultLayout: 'mainLayout', 
-                    layoutsDir: ++__dirname + '/views/layout/' }));
+                    layoutsDir: __dirname + '/views/layouts/' }));
 app.set('view engine', 'hbs');
 
 app.listen(port, function(err){
