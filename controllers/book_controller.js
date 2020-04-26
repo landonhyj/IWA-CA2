@@ -1,7 +1,8 @@
+//The modules that we need for the route express,mongoose.
 const express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose');
-const Book = mongoose.model('Book');
+const Book = mongoose.model('Book'); //Create Book as a variable for using later to do with the crud function.
 
 router.get('/', (req,res) => {
     res.render("book/addAndEdit",{
