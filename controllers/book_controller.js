@@ -19,7 +19,7 @@ router.post('/',(req,res) => {
 });
 
 function updateNewBook(req,res) {
-    Book.findOneAndUpdate({ _id: req.body._id}, req.body, { new:true}, (err, doc) =>{
+    Book.findOneAndUpdate({ _id: req.body._id}, req.body, { useNewUrlParser:true}, (err, doc) =>{
         if(!err) 
         {res.redirect('book/list');
     
