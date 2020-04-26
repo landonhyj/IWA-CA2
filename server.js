@@ -20,7 +20,7 @@ app.engine('hbs', exphbs({ handlebars: allowInsecurePrototypeAccess(Handlebars),
             extname: 'hbs', 
                 defaultLayout: 'mainLayout', 
                     layoutsDir: __dirname + '/views/layouts/' }));
-app.set('view engine', '.hbs');
+app.set('view engine', 'hbs');
 
 app.listen(port, function(err){
     console.log("Listening on Port" + port)
