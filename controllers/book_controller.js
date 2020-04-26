@@ -5,7 +5,7 @@ const Book = mongoose.model('Book');
 
 router.get('/',(req,res) => {
     res.render("book/addAndEdit",{
-        viewTitle : "Insert Book"
+        viewTitle : "Insert Book Details"
     
     });
 
@@ -76,5 +76,18 @@ router.get('/:id',(req,res) => {
 
 });
 
+router.get('/delete/:id', (req,res) => {
+    Book.findByIdAndRemove(req.params.id, (err,doc) =>{
+        if(!err){
+            res.redirect('/book/list');
+        }
+        else
+       
+        {
+          console.log('Error when deleting a book : ' + err);
+        }
+
+    });
+});
 
 module.exports = router ;
