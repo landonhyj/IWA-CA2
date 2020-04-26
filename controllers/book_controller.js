@@ -3,7 +3,7 @@ var router = express.Router();
 const mongoose = require('mongoose');
 const Book = mongoose.model('Book');
 
-router.get('/',(req,res) => {
+router.get('/', (req,res) => {
     res.render("book/addAndEdit",{
         viewTitle : "Insert Book Details"
     
