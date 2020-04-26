@@ -2,12 +2,16 @@ const mongoose = require('mongoose');
 
 var bookSchema = new mongoose.Schema({
     titleName: { type : String,
+                 required: 'Please fill this field.'   
     },
     author: { type : String,
+            required: 'Please fill in an author name.'
     },
-    year: { type : String,
+    year: { type : Number,
+            required: 'Please fill in year of published.'
     },    
-    price: { type : String
+    price: { type : Number,
+            required: 'Please fill in a price of the book.'
     }    
 });
 
