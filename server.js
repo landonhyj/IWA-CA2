@@ -1,4 +1,5 @@
 require('./models/database');
+require('dotenv').config();
 
 const express = require('express');
 const path = require('path');
@@ -8,7 +9,7 @@ const bodyparser = require('body-parser');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 const book_controller = require('./controllers/book_controller');
 
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 var app = express();
 app.use(bodyparser.urlencoded({
     extended: true
