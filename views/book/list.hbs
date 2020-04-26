@@ -1,5 +1,8 @@
+{{!-- Created a button name as Add new in the book's list page ,when it clicked then go back to the main page  --}}
 <h2> <a class="btn btn-secondary" href="/book"><i class="fa fa-plus-circle"></i>Add New</a> Book List</h2>
+{{!-- Created a table using bootstrap css --}}
 <table class="table table-striped">
+{{!-- Created Table header as 4 name as the below shown ,the empty th is for edit and delete button --}}
     <thead>
         <tr>
             <th>Title Name</th>
@@ -9,6 +12,7 @@
             <th></th>
         </tr>
     </thead>
+    {{!-- Created table body with for each loop to retrieve collections from the database mongodb atlas in the book's list --}}
     <tbody>
         {{#each list}}
         <tr>
@@ -17,6 +21,7 @@
             <td>{{this.year}}</td>
             <td>{{this.price}}</td>
             <td>
+            {{!-- Created edit and delete button with some css --}}
                 <a href="/book/{{this._id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                 <a href="/book/delete/{{this._id}}" onclick="return confirm('Please confirm that you want to delete this book ?');"><i class="fa fa-remove" style="color: red" aria-hidden="true"></i></a>
 
