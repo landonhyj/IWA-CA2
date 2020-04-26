@@ -12,9 +12,24 @@ router.get('/',(req,res) => {
 });
 
 router.post('/',(req,res) => {
-    insertNewBook(req,res);
+    if (req.body._id == '')
+        insertNewBook(req,res);
+        else
+        updateNewBook(req,res);
 });
 
+function updateNewBook(req,res) {
+    Book.findOneAndUpdate({ _id: req.body._id}, req.body, { new:true}, (err, doc) =>{
+        if(!err) 
+        {res.redirect('book/list');
+    
+    }
+    else
+        console.log('Error when updating book : ' + err);
+
+    });
+
+}
 
 function insertNewBook(req, res){
     var book = new Book();
@@ -23,17 +38,41 @@ function insertNewBook(req, res){
     book.year = req.body.year;
     book.price = req.body.price;
     book.save((err, doc) => {
-        if (!err)
+        if (!err) 
             res.redirect('book/list');
         else{
+            
             console.log('Error when insertion : ' + err);
         }
     });
 }
 
 router.get('/list',(req,res) => {
-    res.json('from list');
+    Book.find((err, docs) =>{
+        if(!err) {
+            res.render("book/list", {
+                list: docs
+            });
 
+        }
+        else {
+            console.log('Error in retrieving book list :' + err);
+        }
+    });
+
+});
+
+router.get('/:id',(req,res) => {
+    Book.findById(req.params.id, (err, doc) => {
+        if(!err){
+            res.render("book/addAndEdit", {
+                viewTitle: "Update book",
+                book: doc
+            });
+
+        }
+
+    });
 
 });
 
