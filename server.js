@@ -5,8 +5,7 @@ const path = require('path');
 const Handlebars = require('handlebars');
 const exphbs = require('express-handlebars');
 const bodyparser = require('body-parser');
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
-
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 const book_controller = require('./controllers/book_controller');
 
 var port = process.env.port || 3000;
